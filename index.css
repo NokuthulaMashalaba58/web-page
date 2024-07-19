@@ -1,0 +1,30 @@
+body{
+    background-image: url() ;
+    
+}
+p{
+    align-items: center;
+}
+nav ul {
+    list-style-type: none;
+    text-decoration: uppercase;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+}
+nav ul li {
+    text-decoration: none;
+}
+.section about {
+    padding: 0;
+    margin: 10%;
+    width: 350px;
+    height: 200px;
+}
+article{
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    
+}
