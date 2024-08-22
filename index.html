@@ -31,24 +31,34 @@
 </section>
 <section class="services">
     <h2>Our services</h2>
-    <div id=" my slide 1">
+    <div class="slideshow-container"  >
+    <div id=" mySlides ">
         <div class="Text">1/3</div>
-        <img src="picture.jpg" alt="" onclick="currentSlide(1)">
-        <a class="prev" onclick="plusSlides(-1)"></a>
-        <a class="next" onclick="plusSlides(1)"></a>
-       
+        <img src="picture.jpg" alt="" >
+   
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+ 
         
     </div>
-    
-    <img src="picz.jpg" alt="">
-    <img src="images.jpg" alt="">
+    <div id="mySlides">
+    <div class="text">2/3</div>
+    <img src="picz.jpg" alt="" >
+</div>
+<div id="mySlides">
+    <div class="text">3/3</div>
+    <img src="images.jpg" alt="" >
+</div> 
 </section>
 <section class="Contact">
     <h2>Contact Me </h2>
-    <P>Tel Phone 
+    <P>Tel :
         021 5567539
         <br>
-        Email add eventy@gmail.com
+        Email : eventy@gmail.com
     </P>
 
 </section>
@@ -60,5 +70,36 @@
     </form>
 
 </section>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+ function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByid("mySlides fade");
+  let dots = document.getElementsByClassName("dot");
+
+ 
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].id = dots[i].id.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].id += " active";
+  setTimeout(showSlides,2000);
+
+
+}
+</script>
 </body>
 </html>

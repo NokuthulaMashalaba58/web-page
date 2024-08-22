@@ -30,21 +30,28 @@ article{
     width: 50vh;
     
 }
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.mySlides {
+
+/* hide the image by default */
+#mySlides {
     display: none;
+  }
+  /* Slideshow container */
+#slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  .dot{
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: blueviolet;
+    display: inline-block;
+    transition: 0.6s ease;
+      
+  }
+  .active, .dot:hover {
+    background-color: #717171;
   }
