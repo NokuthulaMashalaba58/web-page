@@ -32,26 +32,24 @@
 <section class="services">
     <h2>Our services</h2>
     <div class="slideshow-container"  >
-    <div class=" mySlides ">
-        <div class="Text">1/3</div>
-        <img src="picture.jpg" alt="" >
-   
+        <div class=" mySlides ">
+            <div class="Text">1/3</div>
+            <img src="picture.jpg" alt="" >   
+        </div>
+        <div class="mySlides">
+            <div class="text">2/3</div>
+            <img src="picz.jpg" alt="" >
+        </div>
+        <div class="mySlides">
+            <div class="text">3/3</div>
+            <img src="images.jpg" alt="" >
+        </div> 
         <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
- 
-        
+        </div>
     </div>
-    <div class="mySlides">
-    <div class="text">2/3</div>
-    <img src="picz.jpg" alt="" >
-</div>
-<div class="mySlides">
-    <div class="text">3/3</div>
-    <img src="images.jpg" alt="" >
-</div> 
 </section>
 <section class="Contact">
     <h2>Contact Me </h2>
@@ -89,16 +87,24 @@ function showSlides(n) {
   }
   
   
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {
+    slideIndex = 1
+    console.log( slides.length)
+}
+  if (n < 1) {
+    slideIndex = -1;
+    console.log(slideIndex)
+}
   for (i = 0; i < dots.length; i++) {
     dots[i].id = dots[i].className.replace(" active", "");
   }
+  if (slideIndex > slides.length) {
+    slideIndex = 1
+  }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+  slideIndex++;
   setTimeout(showSlides,2000);
-
-
 }
 </script>
 </body>
